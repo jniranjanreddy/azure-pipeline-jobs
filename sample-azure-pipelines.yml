@@ -1,12 +1,16 @@
 trigger:
 - master
 
-variables: 
+parameters:
   - name: Environment
-    value: dev
+    type: string
+
+#variables: 
+#  - name: Environment
+#    value: dev
 
 jobs:
-- job:  ${{ variables.Environment }}
+- job:  ${{ parameters.Environment }}
   timeoutInMinutes: 10
   pool:
     name: production
