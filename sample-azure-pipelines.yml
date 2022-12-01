@@ -6,7 +6,7 @@ parameters:
     type: string
 
 variables: 
-  - template: dev-step.yml
+  - template: ../dev-step.yml
     parameters:
       moduleName: ${{ parameters.moduleName }}
 
