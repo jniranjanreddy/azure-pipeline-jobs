@@ -8,8 +8,8 @@ jobs:
     name: production
     demands: agent.os -equals Linux
 
-   steps:
-   - template: sample-template-step.yml
-   - template: sample-template-step.yml
-   - template: sample-template-step.yml
+  steps:
+  - template: sample-template-step.yml
+  - template: sample-template-step.yml
+  - template: sample-template-step.yml
    
