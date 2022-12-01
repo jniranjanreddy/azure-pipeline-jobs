@@ -1,17 +1,17 @@
 trigger:
 - master
 
-#parameters:
-#  - name: Environment
-#    type: string
+parameters:
+  - name: Environment
+    type: string
 
 variables: 
   - template: dev-step.yml
     parameters:
-      moduleName: ${{ parameters.version }}
+      version: ${{ parameters.version }}
 
 jobs:
-- job:  ${{ parameters.version }}
+- job:  ${{ parameters.Environment }}
   timeoutInMinutes: 10
   pool:
     name: production
