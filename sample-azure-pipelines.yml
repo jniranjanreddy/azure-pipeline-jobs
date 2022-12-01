@@ -5,9 +5,10 @@ parameters:
   - name: Environment
     type: string
 
-#variables: 
-#  - name: Environment
-#    value: dev
+variables: 
+  - template: dev-step.yml
+    parameters:
+      TestVersion: ${{ parameters.version }}
 
 jobs:
 - job:  ${{ parameters.Environment }}
