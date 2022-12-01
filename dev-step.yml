@@ -1,5 +1,8 @@
 parameters:
-  version: old
+  - name: moduleName
+    type: string
+  - name: moduleVersion
+    type: string
     
 steps:
   - script: echo "This is dev Template"
