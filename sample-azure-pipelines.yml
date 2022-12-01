@@ -10,7 +10,7 @@ parameters:
 #    value: dev
 
 jobs:
-- job:  test
+- job:  ${{ parameters.Environment }}
   timeoutInMinutes: 10
   pool:
     name: production
