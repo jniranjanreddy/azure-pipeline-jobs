@@ -1,8 +1,12 @@
 trigger:
 - master
 
+variables: 
+  - name: Environment
+    value: dev
+
 jobs:
-- job: myJob
+- job:  ${{ variables.Environment }}
   timeoutInMinutes: 10
   pool:
     name: production
