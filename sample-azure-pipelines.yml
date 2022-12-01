@@ -1,9 +1,9 @@
 trigger:
 - master
 
-parameters:
-  - name: Environment
-    type: string
+#parameters:
+#  - name: Environment
+#    type: string
 
 variables: 
   - template: dev-step.yml
