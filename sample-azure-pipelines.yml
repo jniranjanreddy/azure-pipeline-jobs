@@ -8,7 +8,7 @@ parameters:
 variables: 
   - template: dev-step.yml
     parameters:
-      moduleName: ${{ parameters.version }}
+      moduleName: ${{ parameters.moduleName }}
 
 jobs:
 - job:  ${{ parameters.Environment }}
