@@ -1,8 +1,5 @@
 parameters:
-  - name: moduleName
-    type: string
-  - name: moduleVersion
-    type: string
+  moduleName: terraform_backend_tfstate
     
 steps:
   - script: echo "This is dev Template"
