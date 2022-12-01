@@ -1,11 +1,15 @@
 trigger:
 - master
 
-steps:
+jobs:
+- job: myJob
+  timeoutInMinutes: 10
+  pool:
+    name: production
+    demands: agent.os -equals Linux
 
-- template: sample-template-step.yml
-
-- template: sample-template-step.yml
-
-- template: sample-template-step.yml
+   steps:
+   - template: sample-template-step.yml
+   - template: sample-template-step.yml
+   - template: sample-template-step.yml
    
