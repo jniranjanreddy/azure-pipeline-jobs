@@ -4,6 +4,12 @@ trigger:
 parameters:
   - name: Environment
     type: string
+    default: dev
+
+  - name: experimentalTemplate
+    displayName: 'Use experimental build process?'
+    type: boolean
+    default: false
 
 jobs:
 - job:  ${{ parameters.Environment }}
@@ -13,7 +19,12 @@ jobs:
     demands: agent.os -equals Linux
 
   steps:
-  - template: simple-param.yml
+  - ${{ if eq(parameters.experimentalTemplate, true) }}:
+    - template: uat-step.yml
+  - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
+    - template: prod-step.yml
+  
+  #- template: simple-param.yml
   #- template: uat-step.yml
   #- template: prod-step.yml
    
