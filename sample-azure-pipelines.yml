@@ -5,7 +5,7 @@ pool:
 parameters:
 - name: 'runExtendedTests'  # defaults for any parameters that aren't specified
   type: boolean
-  default: false
+  default: true
 
 steps:
 - script: uname -a
