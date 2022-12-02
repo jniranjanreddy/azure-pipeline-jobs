@@ -1,15 +1,6 @@
 trigger:
 - master
 
-parameters:
-  - name: Environment
-    type: string
-
-variables: 
-  - template: dev-step.yml
-    parameters:
-      moduleName: ${{ parameters.moduleName }}
-
 jobs:
 - job:  ${{ parameters.Environment }}
   timeoutInMinutes: 10
