@@ -13,7 +13,7 @@ jobs:
     demands: agent.os -equals Linux
 
   steps:
-  - template: dev-step.yml
-  - template: uat-step.yml
-  - template: prod-step.yml
+  - template: simple-param.yml
+  #- template: uat-step.yml
+  #- template: prod-step.yml
    
