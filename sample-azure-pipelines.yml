@@ -5,6 +5,7 @@ jobs:
   parameters:
     name: Linux
     vmImage: 'ubuntu-latest'
+    manager: 'niru'
     
 
 - template: npm-with-params.yml  # Template reference
