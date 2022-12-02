@@ -1,18 +1,9 @@
-# File: azure-pipelines.yml
-
-
 jobs:
-- template: npm-with-params.yml  # Template reference
-  parameters:
-    name: Linux
-    vmImage: 'ubuntu-latest'
+- job: myJob
+  timeoutInMinutes: 10
+  pool:
+   name: production
+   vmImage: 'macOS-latest'
 
-- template: npm-with-params.yml  # Template reference
-  parameters:
-    name: macOS
-    vmImage: 'macOS-latest'
-
-- template: npm-with-params.yml  # Template reference
-  parameters:
-    name: Windows
-    vmImage: 'windows-latest'
+  steps:
+  - bash: echo "Hello world" ; uname -a
