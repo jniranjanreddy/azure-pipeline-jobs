@@ -8,6 +8,6 @@ parameters:
   default: false
 
 steps:
-- script: npm test
+- script: uname -a
 - ${{ if eq(parameters.runExtendedTests, true) }}:
-  - script: npm test --extended
+  - script: df -h --extended
