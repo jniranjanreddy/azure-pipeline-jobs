@@ -1,16 +1,18 @@
-# File: templates/npm-with-params.yml
+# File: azure-pipelines.yml
 
-parameters:
-- name: name  # defaults for any parameters that aren't specified
-  default: ''
-- name: vmImage
-  default: ''
 
 jobs:
-- job: ${{ parameters.name }}
-  pool: 
-   name: production
-   vmImage: ${{ parameters.vmImage }}
-  steps:
-  - script: uname -a
-  - script: pwd
+- template: templates/npm-with-params.yml  # Template reference
+  parameters:
+    name: Linux
+    vmImage: 'ubuntu-latest'
+
+- template: templates/npm-with-params.yml  # Template reference
+  parameters:
+    name: macOS
+    vmImage: 'macOS-latest'
+
+- template: templates/npm-with-params.yml  # Template reference
+  parameters:
+    name: Windows
+    vmImage: 'windows-latest'
