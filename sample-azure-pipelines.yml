@@ -1,5 +1,5 @@
-trigger:
-- master
+trigger: none
+
 
 parameters:
 - name: myString
@@ -46,7 +46,6 @@ parameters:
     - script: echo step one
     - script: echo step two
 
-trigger: none
 
 jobs: 
 - job: stepList
