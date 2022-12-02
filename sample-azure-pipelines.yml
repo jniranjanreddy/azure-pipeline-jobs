@@ -1,15 +1,15 @@
-# File: templates/jobs.yml
-jobs:
-- job: 
-  pool:
-    name: production
-    demands: agent.os -equals Linux
-  steps:
-  - bash: echo "Hello Ubuntu"
+# File: templates/npm-with-params.yml
 
-- job:
-  pool:
-    name: production
-    demands: agent.os -equals Linux
+parameters:
+- name: name  # defaults for any parameters that aren't specified
+  default: ''
+- name: vmImage
+  default: ''
+
+jobs:
+- job: ${{ parameters.name }}
+  pool: 
+    vmImage: ${{ parameters.vmImage }}
   steps:
-  - bash: echo "Hello Windows"
+  - script: uname -a
+  - script: pws
