@@ -5,12 +5,15 @@ parameters:
   default: ''
 - name: vmImage
   default: ''
+- name: displayName
+  default: ''
 
 jobs:
 - job: ${{ parameters.name }}
+  displayname: ${{ parameters.displayName }}
   pool: 
    name: production
    vmImage: ${{ parameters.vmImage }}
   steps:
-  - script: uname -a
-  - script: pwd
+  - script: echo ${{ parameters.name }}
+  - script: echo ${{ parameters.vmImage }}
