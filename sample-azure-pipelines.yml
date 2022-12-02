@@ -1,20 +1,11 @@
-# File: azure-pipelines.yml
+# File: templates/steps-with-params.yml
 
-jobs:
-- template: npm-with-params.yml  # Template reference
-  parameters:
-    name: Linux
-    vmImage: 'ubuntu-latest'
-    poolName: 'production'
+parameters:
+- name: 'runExtendedTests'  # defaults for any parameters that aren't specified
+  type: boolean
+  default: false
 
-- template: npm-with-params.yml  # Template reference
-  parameters:
-    name: macOS
-    vmImage: 'macOS-latest'
-    poolName: 'production'
-
-- template: npm-with-params.yml  # Template reference
-  parameters:
-    name: Windows
-    vmImage: 'windows-latest'
-    poolName: 'production'
+steps:
+- script: npm test
+- ${{ if eq(parameters.runExtendedTests, true) }}:
+  - script: npm test --extended
