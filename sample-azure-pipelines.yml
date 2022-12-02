@@ -5,16 +5,16 @@ jobs:
   parameters:
     name: Linux
     vmImage: 'ubuntu-latest'
-    #poolName: 'production'
+    poolName: 'production'
 
 - template: npm-with-params.yml  # Template reference
   parameters:
     name: macOS
     vmImage: 'macOS-latest'
-    #poolName: 'production'
+    poolName: 'production'
 
 - template: npm-with-params.yml  # Template reference
   parameters:
     name: Windows
     vmImage: 'windows-latest'
-    #poolName: 'production'
+    poolName: 'production'
