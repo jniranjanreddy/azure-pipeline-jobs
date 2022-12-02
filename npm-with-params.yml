@@ -10,7 +10,6 @@ parameters:
 
 jobs:
 - job: ${{ parameters.name }}
-  displayname: ${{ parameters.displayName }}
   pool: 
    name: production
    vmImage: ${{ parameters.vmImage }}
