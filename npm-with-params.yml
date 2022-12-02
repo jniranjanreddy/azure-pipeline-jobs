@@ -5,13 +5,13 @@ parameters:
   default: ''
 - name: vmImage
   default: ''
-- name: displayName
-  default: ''
+- name: poolName
+  default: 'production'
 
 jobs:
 - job: ${{ parameters.name }}
   pool: 
-   name: production
+   name: ${{ parameters.poolName }}
    vmImage: ${{ parameters.vmImage }}
   steps:
   - script: echo ${{ parameters.name }}
