@@ -9,7 +9,7 @@ parameters:
   - name: experimentalTemplate
     displayName: 'Use experimental build process?'
     type: boolean
-    default: false
+    default: true
 
 jobs:
 - job:  ${{ parameters.Environment }}
