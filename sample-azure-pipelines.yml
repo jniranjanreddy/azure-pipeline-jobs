@@ -9,7 +9,8 @@ parameters:
 jobs:
 - job: ${{ parameters.name }}
   pool: 
-    vmImage: ${{ parameters.vmImage }}
+   name: production
+   vmImage: ${{ parameters.vmImage }}
   steps:
   - script: uname -a
-  - script: pws
+  - script: pwd
