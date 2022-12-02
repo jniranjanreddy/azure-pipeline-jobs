@@ -2,12 +2,14 @@
 jobs:
 - job: 
   pool:
-    vmImage: 'ubuntu-latest'
+    name: production
+    demands: agent.os -equals Linux
   steps:
   - bash: echo "Hello Ubuntu"
 
 - job:
   pool:
-    vmImage: 'windows-latest'
+    name: production
+    demands: agent.os -equals Linux
   steps:
   - bash: echo "Hello Windows"
