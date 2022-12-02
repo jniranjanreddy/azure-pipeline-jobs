@@ -2,29 +2,55 @@ trigger:
 - master
 
 parameters:
-  - name: Environment
-    type: string
-    default: dev
+- name: myString
+  type: string
+  default: a string
+- name: myMultiString
+  type: string
+  default: default
+  values:
+  - default
+  - ubuntu
+- name: myNumber
+  type: number
+  default: 2
+  values:
+  - 1
+  - 2
+  - 4
+  - 8
+  - 16
+- name: myBoolean
+  type: boolean
+  default: true
+- name: myObject
+  type: object
+  default:
+    foo: FOO
+    bar: BAR
+    things:
+    - one
+    - two
+    - three
+    nested:
+      one: apple
+      two: pear
+      count: 3
+- name: myStep
+  type: step
+  default:
+    script: echo my step
+- name: mySteplist
+  type: stepList
+  default:
+    - script: echo step one
+    - script: echo step two
 
-  - name: experimentalTemplate
-    displayName: 'Use experimental build process?'
-    type: boolean
-    default: true
+trigger: none
 
-jobs:
-- job:  ${{ parameters.Environment }}
-  timeoutInMinutes: 10
-  pool:
-    name: production
-    demands: agent.os -equals Linux
-
+jobs: 
+- job: stepList
+  steps: ${{ parameters.mySteplist }}
+- job: myStep
   steps:
-  - ${{ if eq(parameters.experimentalTemplate, true) }}:
-    - template: uat-step.yml
-  - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
-    - template: prod-step.yml
-  
-  #- template: simple-param.yml
-  #- template: uat-step.yml
-  #- template: prod-step.yml
-   
+    - ${{ parameters.myStep }}
