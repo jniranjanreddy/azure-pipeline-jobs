@@ -10,4 +10,4 @@ parameters:
 steps:
 - script: uname -a
 - ${{ if eq(parameters.runExtendedTests, true) }}:
-  - script: df -h --extended
+  - script: df -h
