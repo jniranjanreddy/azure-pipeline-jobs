@@ -1,5 +1,7 @@
 # File: templates/steps-with-params.yml
-
+pool: 
+  name: production
+  vmImage: 'ubuntu-latest'
 parameters:
 - name: 'runExtendedTests'  # defaults for any parameters that aren't specified
   type: boolean
