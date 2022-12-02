@@ -5,8 +5,8 @@ pool:
 
 resources:
   repositories:
-    - repository: azure-devops
+    - repository: templates
       type: github
-      name: templates     
+      name: azure-devops 
 jobs:
 - template: win-linux.yml@templates  # Template reference
