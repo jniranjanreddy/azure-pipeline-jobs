@@ -1,6 +1,10 @@
 trigger:
 - master
 
+parameters:
+  - name: Environment
+    type: string
+
 jobs:
 - job:  ${{ parameters.Environment }}
   timeoutInMinutes: 10
