@@ -5,7 +5,7 @@ jobs:
   parameters:
     name: Linux
     vmImage: 'ubuntu-latest'
-    displayName: 'This is from main.yam'
+    #displayName: 'This is from main.yam'
 
 - template: npm-with-params.yml  # Template reference
   parameters:
