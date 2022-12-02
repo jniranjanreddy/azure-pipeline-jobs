@@ -2,12 +2,12 @@
 pool: 
   name: production
   vmImage: 'ubuntu-latest'
-parameters:
-- name: 'runExtendedTests'  # defaults for any parameters that aren't specified
-  type: boolean
-  default: true
 
-steps:
-- script: uname -a
-- ${{ if eq(parameters.runExtendedTests, true) }}:
-  - script: df -h
+resources:
+  repositories:
+    - repository: azure-devops
+      type: github
+      name: templates
+
+jobs:
+- template: win-linux.yml@templates  # Template reference
