@@ -3,10 +3,12 @@ pool:
   name: production
   vmImage: 'ubuntu-latest'
 
-resources:
-  repositories:
-    - repository: templates
-      type: github
-      name: azure-devops 
-jobs:
-- template: win-linux.yml@templates  # Template reference
+
+variables: 
+- name: my-bare-variable
+  variable: 'value-of-my-bare-variable'
+  
+- group: my-variable-group
+
+steps:
+  - script: echo $(my-variable-group)
