@@ -1,6 +1,5 @@
 # File: templates/steps-with-params.yml
 pool: 
-  name: production
   vmImage: 'ubuntu-latest'
 
 
