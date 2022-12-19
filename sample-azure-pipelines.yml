@@ -5,7 +5,7 @@ pool:
 
 variables: 
 - name: my-bare-variable
-  variable: 'value-of-my-bare-variable'
+  value: 'value-of-my-bare-variable'
   
 - group: my-variable-group
 
