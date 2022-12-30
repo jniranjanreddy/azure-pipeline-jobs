@@ -9,4 +9,4 @@ stages:
   jobs:
   - job: 
     steps:
-    - script: id ; docker image prune -a --force
+    - script: id ; uname -a ; docker image prune -a --force
