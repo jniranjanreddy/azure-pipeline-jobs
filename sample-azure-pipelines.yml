@@ -13,41 +13,14 @@ parameters:
   values:
   - default
   - ubuntu
-- name: myNumber
-  type: number
-  default: 2
-  values:
-  - 1
-  - 2
-  - 4
-  - 8
-  - 16
-- name: myBoolean
-  type: boolean
-  default: true
-- name: myObject
-  type: object
-  default:
-    foo: FOO
-    bar: BAR
-    things:
-    - one
-    - two
-    - three
-    nested:
-      one: apple
-      two: pear
-      count: 3
+  - CentOS
+  - Windows
+
+
 - name: myStep
   type: step
   default:
     script: echo my step
-- name: mySteplist
-  type: stepList
-  default:
-    - script: echo step one
-    - script: echo step two
-
 
 jobs: 
 - job: stepList
