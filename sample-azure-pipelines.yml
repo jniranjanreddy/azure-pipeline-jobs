@@ -3,11 +3,10 @@ pool:
   name: production
   vmImage: 'ubuntu-latest'
 
-variables: 
-- name: my-bare-variable
-  value: 'value-of-my-bare-variable'
-  
-- group: my-variable-group
-
-steps:
-  - script: echo $(my-variable-group)
+stages:
+- stage: Delete_Unused_Docker_images
+  displayName: Delete Unused Docker images
+  jobs:
+  - job: 
+    steps:
+    - script: docker image prune -a --force
