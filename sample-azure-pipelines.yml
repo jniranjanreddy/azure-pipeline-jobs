@@ -15,13 +15,7 @@ parameters:
   - ubuntu
   - CentOS
   - Windows
-
-
-- name: myStep
-  type: step
-  default:
-    script: echo my step
-
+  
 jobs: 
 - job: stepList
   steps: ${{ parameters.mySteplist }}
