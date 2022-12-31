@@ -25,7 +25,7 @@ parameters:
 jobs:
   - job: A
     steps:
-    - script: echo ${{parameters.Environment}}
+    - script: echo $(parameters.Environment)
     condition: eq(parameters.Environment, UAT)
 
   #steps:
