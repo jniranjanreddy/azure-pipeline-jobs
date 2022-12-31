@@ -1,7 +1,9 @@
 trigger: none
-pool:
-  name: production
-  demands: agent.os -equals Linux
+pool: 
+  vmImage: 'ubuntu-latest'
+#pool:
+#  name: production
+#  demands: agent.os -equals Linux
 variables:
 #- group: PROD
 - name: env
