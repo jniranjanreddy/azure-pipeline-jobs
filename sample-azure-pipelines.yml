@@ -30,5 +30,5 @@ steps:
 - ${{ if eq(variables.myENV, UAT) }}:
     - script: echo "UAT.yml"
 
-- ${{ if eq(variables.myENV, Prod) }}:
-    - script: echo "Prod.yml"
+#- ${{ if eq(variables.myENV, Prod) }}:
+#    - script: echo "Prod.yml"
