@@ -1,23 +1,12 @@
-trigger: none
+ variables:
+- group: PROD
+- name: env
+  ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
+    value: a
+  ${{ else }}:
+    value: b
 
-pool: 
-  vmImage: 'ubuntu-latest'
-
-parameters:
-- name: Operating_Syatems
-  type: string
-  default: ubuntu
-  values:
-  - ubuntu
-  - Redhat
-  - CentOS
-  - Windows
-
-- name: Environments
-  type: string
-  default: Dev
-  values:
-  - Dev
-  - UAT
-  - Testing
-  - Prod
+steps:
+- script: | 
+    echo '$(name)'
+    echo '$(env)'
