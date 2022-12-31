@@ -15,3 +15,12 @@ parameters:
   - Redhat
   - CentOS
   - Windows
+
+- name: Environments
+  type: string
+  default: Dev
+  values:
+  - Dev
+  - UAT
+  - Testing
+  - Prod
