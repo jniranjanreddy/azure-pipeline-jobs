@@ -28,6 +28,6 @@ variables:
 
 steps:
   - script: echo ${{variables.myENV}}
-    #condition: eq(variables.myENV, UAT)
+    condition: eq(variables.myENV, UAT)
 
 
