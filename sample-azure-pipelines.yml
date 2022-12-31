@@ -1,34 +1,9 @@
-trigger: none
-
-pool: 
-  vmImage: 'ubuntu-latest'
-
 parameters:
-- name: Operating_Systems
-  type: string
-  default: ubuntu
-  values:
-  - ubuntu
-  - Redhat
-  - CentOS
-  - Windows
+- name: 'runExtendedTests'  # defaults for any parameters that aren't specified
+  type: boolean
+  default: false
 
-- name: Environment
-  type: string
-  default: Dev
-  values:
-  - Dev
-  - UAT
-  - Testing
-  - Prod
-
-jobs:
-  - job: A
-    steps:
-    - script: echo $(parameters.Environment)
-    condition: eq(parameters.Environment, UAT)
-
-  #steps:
-  #- ${{ if eq(parameters.Environment, UAT) }}:
-  #  - script: echo ${{parameters.Environment}}
-  
+steps:
+- script: npm test
+- ${{ if eq(parameters.runExtendedTests, true) }}:
+  - script: uptime
