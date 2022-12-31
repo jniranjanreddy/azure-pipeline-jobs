@@ -4,9 +4,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 parameters:
-- name: myString
-  type: string
-  default: a string
 - name: Operating_Syatems
   type: string
   default: ubuntu
