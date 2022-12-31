@@ -1,6 +1,3 @@
-pool: 
-  vmImage: 'ubuntu-latest'
-
 
 parameters:
 - name: 'runExtendedTests'  # defaults for any parameters that aren't specified
