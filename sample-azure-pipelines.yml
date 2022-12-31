@@ -7,11 +7,11 @@ parameters:
 - name: myString
   type: string
   default: a string
-- name: myMultiString
+- name: Operating_Syatems
   type: string
-  default: default
+  default: ubuntu
   values:
-  - default
   - ubuntu
+  - Redhat
   - CentOS
   - Windows
