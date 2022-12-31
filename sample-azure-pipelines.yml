@@ -21,9 +21,14 @@ parameters:
   - UAT
   - Testing
   - Prod
+
 variables: 
 - name: myENV
   value: ${{ parameters.Environments}}
 
 steps:
-  - script: echo ${{variables.myENV}}
+- ${{ if eq(variables.myENV, UAT) }}:
+    - script: echo "UAT.yml"
+
+- ${{ if eq(variables.myENV, Prod) }}:
+    - script: echo "Prod.yml"
