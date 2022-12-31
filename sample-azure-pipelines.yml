@@ -23,13 +23,12 @@ parameters:
   - Prod
 
 jobs:
-- job:  ${{parameters.Environment}}
-  timeoutInMinutes: 10
-#  pool:
-#    name: production
-#    demands: agent.os -equals Linux
+  - job: A
+    steps:
+    - script: echo ${{parameters.Environment}}
+    condition: eq(parameters.Environment, UAT)
 
-  steps:
-  - ${{ if eq(parameters.Environment, UAT) }}:
-    - script: echo ${{ parameters.Environment }}
+  #steps:
+  #- ${{ if eq(parameters.Environment, UAT) }}:
+  #  - script: echo ${{parameters.Environment}}
   
