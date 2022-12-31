@@ -26,4 +26,4 @@ variables:
   value: ${{ parameters.Environments}}
 
 steps:
-  - script: echo $(variables.myENV)
+  - script: echo ${{variables.myENV}}
