@@ -27,8 +27,7 @@ variables:
   value: ${{ parameters.Environments}}
 
 steps:
-- ${{ if eq(variables.myENV, UAT) }}:
-    - script: echo "UAT.yml"
+  - script: echo "I am UAT"
+    condition: eq(variables.myENV, UAT)
 
-#- ${{ if eq(variables.myENV, Prod) }}:
-#    - script: echo "Prod.yml"
+
