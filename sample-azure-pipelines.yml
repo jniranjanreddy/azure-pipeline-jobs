@@ -1,9 +1,29 @@
+trigger: none
+
+pool: 
+  vmImage: 'ubuntu-latest'
 
 parameters:
-- name: 'runExtendedTests'  # defaults for any parameters that aren't specified
-  type: boolean
-  default: false
+- name: Operating_Syatems
+  type: string
+  default: ubuntu
+  values:
+  - ubuntu
+  - Redhat
+  - CentOS
+  - Windows
+
+- name: Environments
+  type: string
+  default: Dev
+  values:
+  - Dev
+  - UAT
+  - Testing
+  - Prod
+variables: 
+- name: myENV
+  value: ${{ parameters.Environments}}
 
 steps:
-- ${{ if eq(parameters.runExtendedTests, true) }}:
-  - script: uptime
+  - script: echo $(variables.myENV)
