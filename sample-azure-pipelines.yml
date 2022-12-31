@@ -27,7 +27,7 @@ variables:
   value: ${{ parameters.Environments}}
 
 steps:
-  - script: echo "I am UAT"
-    condition: eq(variables.myENV, UAT)
+  - script: echo ${{variables.myENV}}
+    #condition: eq(variables.myENV, UAT)
 
 
