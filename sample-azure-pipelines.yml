@@ -5,7 +5,7 @@ pool:
 variables:
 #- group: PROD
 - name: env
-  ${{ if eq(variables['Build.SourceBranchName'], 'dev') }}:
+  ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
     value: ${{Build.SourceBranchName}}
   ${{ else }}:
     value: b
