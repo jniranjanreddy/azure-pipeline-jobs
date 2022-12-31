@@ -6,7 +6,7 @@ variables:
 #- group: PROD
 - name: env
   ${{ if eq(variables['Build.SourceBranchName'], 'master') }}:
-    value: ${{Build.SourceBranchName}}
+    value: ${{SourceBranchName}}
   ${{ else }}:
     value: b
 
