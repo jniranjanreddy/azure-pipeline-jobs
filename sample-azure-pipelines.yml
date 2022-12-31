@@ -32,5 +32,4 @@ jobs:
   steps:
   - ${{ if eq(parameters.Environment, UAT) }}:
     - script: echo ${{ parameters.Environment }}
-  - ${{ if not(eq(parameters.experimentalTemplate, true)) }}:
-    - template: prod-step.yml
+  
